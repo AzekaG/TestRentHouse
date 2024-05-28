@@ -1,0 +1,80 @@
+﻿@model TestRentHouse.Models.ModelUser_House;
+    ViewData["Title"] = "Home Page";
+
+
+
+
+
+
+
+
+{
+    <h3>
+        @Model.User.Id
+    </h3>
+    <h3>
+    @Model.User.FirstName
+    </h3>
+    <h3>
+    @Model.User.LastName
+    </h3>
+    <h3>
+    @Model.User.Email
+    </h3>
+    <h3>
+    @Model.User.Number
+    </h3>
+    <h3>
+    @Model.User.Password
+    </h3>
+    <h3>
+    @Model.User.Salt
+    </h3>
+    <h3>
+    @Model.User.Status
+    </h3>
+
+   @foreach (var house in Model.HouseList)
+    {
+    <h5>
+            @house.Id
+    </h5>
+        <h5>
+            @house.Name
+        </h5>
+        <h5>
+            @house.Price
+        </h5>
+        <h5>
+            @house.Description
+        </h5>
+        <h5>
+            @house.Area
+        </h5>
+        <h5>
+            @house.CountRoom
+        </h5>
+        <h5>
+            @house.CountFloor
+        </h5>
+        <h5>
+            @house.Subscribe
+        </h5>
+        <h5>
+            @house.Is_Valid
+        </h5>
+        <h5>
+            @house.CreatedDate
+        </h5>
+      @foreach(var im in house.Images_Path)
+    {
+        <img src="@im.Path">
+           
+        </img>
+    }
+}
+    
+
+
+}
+
